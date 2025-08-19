@@ -1,0 +1,13 @@
+[Plugin]
+name = GBF汉化插件
+description = 碧蓝幻想游戏汉化脚本注入
+version = 1.0
+author = ryner-wu  // 可以替换为你自己的名字
+icon = https://example.com/icon.png  // 可选，插件图标URL（如游戏图标）
+homepage = https://github.com/ryner-wu/blhx_loon  // 可选，你的仓库主页
+
+[MITM]
+hostname = %APPEND% game.granbluefantasy.jp, gbf.game.mbga.jp
+
+[Script]
+http-response ^https?://(game\.granbluefantasy\.jp|gbf\.game\.mbga\.jp)/, script-path=https://raw.githubusercontent.com/ryner-wu/blhx_loon/refs/heads/main/inject_gbf.js, requires-body=true, max-size=2097152, timeout=60, tag=GBF汉化注入
